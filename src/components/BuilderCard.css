@@ -1,0 +1,245 @@
+.builder-card {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-top: 4px solid;
+}
+
+.builder-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--type-color-rgb), 0.1) 0%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.builder-card:hover::before {
+  opacity: 1;
+}
+
+.builder-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.builder-pipeline {
+  border-top-color: var(--purple-primary);
+}
+
+.builder-feature {
+  border-top-color: var(--blue-primary);
+}
+
+.builder-model {
+  border-top-color: var(--teal-primary);
+}
+
+.builder-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.builder-icon {
+  font-size: 48px;
+  flex-shrink: 0;
+}
+
+.builder-title-wrapper {
+  flex: 1;
+}
+
+.builder-title {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.builder-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.builder-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 25px;
+  min-height: 60px;
+}
+
+.builder-features {
+  margin-bottom: 25px;
+}
+
+.builder-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.builder-features li {
+  color: var(--text-secondary);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  padding-left: 30px;
+  opacity: 0.8;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.builder-features.expanded li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.builder-features li:last-child {
+  border-bottom: none;
+}
+
+.builder-features li:hover {
+  color: white;
+  padding-left: 35px;
+}
+
+.feature-icon {
+  position: absolute;
+  left: 0;
+  color: var(--type-color, var(--purple-primary));
+  font-weight: bold;
+}
+
+.builder-actions {
+  margin-top: auto;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.builder-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 25px;
+  background: linear-gradient(135deg, 
+    var(--type-color, var(--purple-primary)), 
+    color-mix(in srgb, var(--type-color, var(--purple-primary)), transparent 30%)
+  );
+  color: white;
+  text-decoration: none;
+  border-radius: var(--border-radius-md);
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.builder-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(139, 92, 246, 0.3);
+}
+
+.btn-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+.btn-arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.builder-btn:hover .btn-arrow {
+  transform: translateX(5px);
+}
+
+.builder-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  background: var(--type-color, var(--purple-primary));
+  color: white;
+}
+
+.builder-bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(var(--type-color-rgb), 0.1);
+  filter: blur(40px);
+  z-index: -1;
+}
+
+.shape-1 {
+  width: 100px;
+  height: 100px;
+  top: -30px;
+  right: -30px;
+}
+
+.shape-2 {
+  width: 80px;
+  height: 80px;
+  bottom: -20px;
+  left: -20px;
+}
+
+.shape-3 {
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .builder-card {
+    padding: 25px 20px;
+  }
+  
+  .builder-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .builder-icon {
+    font-size: 40px;
+  }
+  
+  .builder-description {
+    min-height: auto;
+  }
+  
+  .builder-features li {
+    padding-left: 25px;
+  }
+}
