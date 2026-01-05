@@ -1,6 +1,6 @@
 {
   "name": "har-studio-react",
-  "homepage": "https://tokol.github.io/harstudio",
+  "homepage": "https://tokol.github.io/HARStudio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
