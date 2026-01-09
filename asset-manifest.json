@@ -1,17 +1,18 @@
 {
   "files": {
     "main.css": "/harstudio/static/css/main.36f2b90f.css",
-    "main.js": "/harstudio/static/js/main.5e410863.js",
+    "main.js": "/harstudio/static/js/main.34a01b86.js",
     "static/media/ellen.jpeg": "/harstudio/static/media/ellen.f13721507e261f589c2a.jpeg",
+    "static/media/har_exp.png": "/harstudio/static/media/har_exp.efcd99e98a0a1bacc258.png",
     "static/media/suresh.png": "/harstudio/static/media/suresh.cb0cb452ca3c0845283d.png",
     "static/media/grp.png": "/harstudio/static/media/grp.3caa45bbe22d43a73a99.png",
     "static/media/jonas.jpeg": "/harstudio/static/media/jonas.172c33a15f35aa62eafc.jpeg",
     "index.html": "/harstudio/index.html",
     "main.36f2b90f.css.map": "/harstudio/static/css/main.36f2b90f.css.map",
-    "main.5e410863.js.map": "/harstudio/static/js/main.5e410863.js.map"
+    "main.34a01b86.js.map": "/harstudio/static/js/main.34a01b86.js.map"
   },
   "entrypoints": [
     "static/css/main.36f2b90f.css",
-    "static/js/main.5e410863.js"
+    "static/js/main.34a01b86.js"
   ]
 }
