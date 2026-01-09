@@ -4,6 +4,7 @@ import ActivityGrid from './components/ActivityGrid';
 import TeamShowcase from './components/TeamShowcase';
 import PremiumFooter from './components/PremiumFooter';
 import Acknowledgements from './components/Acknowledgements';
+import ellenImage from './assets/images/ellen.jpeg';
 import './styles/premium.css';
 import './styles/animations.css';
 
@@ -25,6 +26,10 @@ function App() {
 
     window.addEventListener('scroll', handleScroll);
     handleScroll();
+
+    // Preload Ellen image to reduce visible load delay in ActivityGrid.
+    const preloadImage = new Image();
+    preloadImage.src = ellenImage;
 
     // Cleanup
     return () => window.removeEventListener('scroll', handleScroll);

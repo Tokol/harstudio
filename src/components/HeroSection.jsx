@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import harExpImage from '../assets/images/har_exp.png';
 
 const HeroSection = () => {
   // State for animated values
@@ -337,37 +338,28 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Academic Context */}
-        <div className="academic-context">
-          <div className="context-divider"></div>
-          <div className="hero-intro">
- <div className="hero-intro">
-  <p className="intro-text">
-    How does Netflix know what you will watch next? How does a self driving car distinguish between a pedestrian and a lamppost? How does your phone recognize your face in the dark? 
-    <br /><br />
-    At the heart of these wonders lies <span className="highlight">classification</span> — machine learning's superpower to make sense of the world. 
-    <br /><br />
-    And the frontier keeps expanding: detecting <span className="bold">AI generated content</span>, spotting <span className="bold">deepfake videos</span>, predicting <span className="bold">disease outbreaks</span> from wearables, even helping robots understand <span className="bold">human emotion</span>. Each breakthrough starts with the same fundamental question: "What is this?"
-    <br /><br />
-    This platform pulls back the curtain, transforming how sensors see your movements into how algorithms understand your activities. 
-    <br /><br />
-    Go from <span className="bold">how does it know?</span> to <span className="bold">now I can build it myself</span> — in real time, with real data, and zero black boxes.
-  </p>
-  <p className="intro-cta">
-    The classification problem never ends. It evolves. From recognizing swimming strokes today to diagnosing movement disorders tomorrow. Start exploring where data meets intelligence, and where today's learning becomes tomorrow's breakthrough.
-  </p>
-</div>
-</div>
-          <div className="context-divider"></div>
-          
-          <p className="context-tagline">
-             <div className="hero-intro">
-  <p className="intro-text">
-    This platform demonstrates the end to end machine learning workflow for Human Activity Recognition, from sensor data collection to real time classification. Built for the Intelligent Systems program at Novia University of Applied Sciences.
-  </p>
-</div>
-          </p>
-        </div>
+        <section className="har-explainer">
+          <div className="har-text">
+            <h2>Human Activity Recognition (HAR)</h2>
+            <p>
+              Human Activity Recognition identifies physical activities by learning
+              patterns from wearable sensor data such as accelerometers and gyroscopes.
+            </p>
+            <p>
+              HAR systems extract features from short time windows and use machine
+              learning models to classify activities.
+            </p>
+          </div>
+          <div className="har-image">
+            <img
+              src={harExpImage}
+              alt="Human Activity Recognition concept"
+            />
+            <div className="har-caption">
+              Human motion and sensor-based analysis in a HAR system
+            </div>
+          </div>
+        </section>
 
         <style jsx>{`
           .hero-section {
@@ -884,48 +876,55 @@ const HeroSection = () => {
             font-size: 0.75rem;
           }
           
-          /* Academic Context */
-          .academic-context {
+          /* HAR Explainer */
+          .har-explainer {
             margin-top: 60px;
-            padding: 30px 0;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 40px;
+            align-items: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           }
-          
-          .context-divider {
-            height: 1px;
-            background: linear-gradient(90deg, 
-              transparent, 
-              rgba(255, 215, 0, 0.5), 
-              transparent
-            );
-            margin: 20px auto;
-            max-width: 400px;
+
+          .har-text {
+            text-align: left;
+            color: rgba(255, 255, 255, 0.9);
           }
-          
-          .context-title {
-            font-size: 1.3rem;
+
+          .har-text h2 {
             color: white;
-            margin-bottom: 8px;
-            font-weight: 600;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
           }
-          
-          .context-subtitle {
-            font-size: 1rem;
+
+          .har-text p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin: 0 0 14px;
+          }
+
+          .har-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+          }
+
+          .har-image img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+          }
+
+          .har-caption {
             color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 20px;
-          }
-          
-          .context-tagline {
-            font-size: 1.1rem;
-            color: white;
-            font-style: italic;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 15px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 8px;
-            border-left: 3px solid #FFD700;
+            font-size: 0.9rem;
+            text-align: center;
           }
           
           /* Responsive */
@@ -949,9 +948,14 @@ const HeroSection = () => {
             .hero-main-title {
               font-size: 2rem;
             }
-            
-            .context-title {
-              font-size: 1.1rem;
+
+            .har-explainer {
+              grid-template-columns: 1fr;
+              text-align: center;
+            }
+
+            .har-text {
+              text-align: center;
             }
           }
         `}</style>
